@@ -1,6 +1,7 @@
 ---
 import Layout from '../components/Layout.astro';
 import FeedbackForm from '../components/FeedbackForm.astro';
+const userId = Astro.url.searchParams.get("userId")! || "";
 ---
 
 <Layout title="Astro Toolbox">
@@ -72,3 +73,8 @@ import FeedbackForm from '../components/FeedbackForm.astro';
     width: 20px;
   }
 </style>
+
+
+<script define:vars={{userId}}>
+console.log(userId, 1212)
+</script>
