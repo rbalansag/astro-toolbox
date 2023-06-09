@@ -4,6 +4,7 @@ export interface Props {
 }
 
 const { title } = Astro.props as Props;
+const userId = Astro.url.searchParams.get('userId')! || '';
 ---
 
 <!DOCTYPE html>
@@ -18,7 +19,9 @@ const { title } = Astro.props as Props;
     <slot />
   </body>
 </html>
-
+<script define:vars={{ userId }}>
+console.log(userId, 1212);
+</script>
 <style>
   :root {
     --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
